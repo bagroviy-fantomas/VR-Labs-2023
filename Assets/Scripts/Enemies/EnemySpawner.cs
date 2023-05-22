@@ -10,6 +10,8 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private GameObject enemyPrefab;
     [SerializeField] private float spawnDelay;
     [SerializeField] private Transform player;
+    public Transform Bullets;
+    private int playerScore;
 
     void Awake()
     {
@@ -21,8 +23,17 @@ public class EnemySpawner : MonoBehaviour
         }
     }
 
-    private void Start(){
+    public void StartGame(){
         StartCoroutine(SpawnEnemy(spawnDelay));
+        player.GetComponent<Player>().ResetHP();
+        ResetScore();
+    }
+
+    public void StopGame(){
+        foreach (Transform child in Bullets) {
+            Destroy(child.gameObject);
+        }
+        StopAllCoroutines();
     }
 
     private IEnumerator SpawnEnemy(float delay){
@@ -44,6 +55,7 @@ public class EnemySpawner : MonoBehaviour
             var newEnemy = Instantiate(enemyPrefab, enemySpawnPoint.transform.position, Quaternion.identity);
             newEnemy.GetComponent<Enemy>().player = player;
             newEnemy.GetComponent<Enemy>().enemySpawnPoint = enemySpawnPoint;
+            enemySpawnPoint.enemy = newEnemy;
 
             enemySpawnPoint.isSeized = true;
             var dir = player.position - newEnemy.transform.position;
@@ -54,6 +66,24 @@ public class EnemySpawner : MonoBehaviour
         else{
             return false;
         }
+    }
 
+    public void ClearEnemies(){
+        foreach(EnemySpawnPoint spawnPoint in enemySpawnPoints){
+            Destroy(spawnPoint.enemy);
+            spawnPoint.isSeized = false;
+        }
+    }
+
+    public void AddScore(){
+        playerScore++;
+    }
+
+    public int GetScore(){
+        return playerScore;
+    }
+
+    public void ResetScore(){
+        playerScore = 0;
     }
 }

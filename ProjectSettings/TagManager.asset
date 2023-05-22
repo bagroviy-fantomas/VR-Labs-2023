@@ -6,6 +6,8 @@ TagManager:
   tags:
   - LeverHandle
   - Enemy
+  - Shield
+  - TriggerSphere
   layers:
   - Default
   - TransparentFX
@@ -15,8 +17,8 @@ TagManager:
   - UI
   - Bullet
   - Gun
-  - 
-  - 
+  - BodyParts
+  - Enemy
   - 
   - 
   - 

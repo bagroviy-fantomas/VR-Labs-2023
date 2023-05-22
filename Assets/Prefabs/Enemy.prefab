@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 537409540171172073}
   - component: {fileID: 6041230958176456161}
   - component: {fileID: 5881562881133524720}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: legRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 3792910793791370998}
   - component: {fileID: 622603841299921483}
   - component: {fileID: 2945289779022438840}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -179,7 +179,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2498038532009909243}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bulletSpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -212,7 +212,7 @@ GameObject:
   - component: {fileID: 5017460658637431155}
   - component: {fileID: 8922872317415706852}
   - component: {fileID: 4253324404943454384}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: legLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -297,7 +297,7 @@ GameObject:
   - component: {fileID: 3476942029135997615}
   - component: {fileID: 1276357769032409602}
   - component: {fileID: 8403417392699541827}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: armRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -382,7 +382,7 @@ GameObject:
   - component: {fileID: 7425188636413357898}
   - component: {fileID: 1736864476530764562}
   - component: {fileID: 826069887533644500}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: armLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -467,7 +467,7 @@ GameObject:
   - component: {fileID: 6051049785939344388}
   - component: {fileID: 5085636465931822301}
   - component: {fileID: 582609646862689159}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -553,7 +553,7 @@ GameObject:
   - component: {fileID: 8852682331043790542}
   - component: {fileID: 3675512744596052374}
   - component: {fileID: 2521755698769064924}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -596,8 +596,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 5615661382576997034, guid: 58eef94b6a798ed4282c5458c28fa54d, type: 3}
   bulletSpawnPoint: {fileID: 2498038532009909243}
-  cd: 1
-  bulletSpeed: 10
+  cd: 5
+  bulletSpeed: 6
+  scatter: 0.07
+  deathForce: 10
+  deathDelay: 15
 --- !u!65 &3675512744596052374
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -11,5 +11,8 @@ public class Bullet : MonoBehaviour
             other.GetComponent<ICharacter>().TakeDamage();
             Destroy(gameObject);
         }
+        else if (other.transform.CompareTag("Shield")){
+            Destroy(gameObject);
+        }
     }
 }
